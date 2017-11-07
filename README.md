@@ -1,20 +1,6 @@
 ## cempasúchil
 
 #### Aplicación de consulta de corpus de mensajería instantánea.
-
-
-* Descargar e instalar los módulos
-```sh
-$ npm install 
-```
-
-* Parámetros que requieren editarse
-
-| parámetro | archivo |
-| ------ | ------ |
-| servidor | app.js |
-| base de datos | ConvProvider |
-
 ****
 
 * Para la base de datos, una vez descomprimido el archivo .zip
@@ -36,3 +22,21 @@ $ python3 prr.py
 | host y puerto de la bd | 8 mongoClient = MongoClient('HOST',PUERTO) |
 | nombre de la base de datos | 9 db = mongoClient.NOMBRE_DB |
 | nombre de la coleccion | 10 collection = db.NOMBRE_COLECCION |
+
+****
+
+* Descargar e instalar los módulos
+```sh
+$ npm install 
+```
+
+* Parámetros que requieren editarse
+
+| parámetro | archivo | línea |
+| ------ | ------ | ------ |
+| host y puerto app| app.js |  17   |
+| host y puerto bd | app.js |  34   |
+| nombre bd | ConvProvider.js |   10     |
+| coleccion bd  | ConvProvider.js |   16  |
+
+****
