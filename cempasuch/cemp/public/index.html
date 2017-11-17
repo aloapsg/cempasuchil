@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="cores">
+    <meta name="author" content="GIL UNAM">
+
+    <title>Cemp</title>
+        <style type="text/css">
+        body {
+            background: #F7E0CE;
+            }
+            p {
+               font-family:  "Courier New", Courier, monospace;
+            }
+            a:link{
+                color: #5B7AAA;
+            }
+        </style>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="shortcut icon" type="image/jpg" href="./cemp.jpg"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        
+        <link href="app-content/app.css" rel="stylesheet"/>
+
+    <!-- Custom styles for this template -->
+    <link href="narrow-jumbotron.css" rel="stylesheet">
+        <script src="op.js"></script>
+  </head>
+  <body>  
+    <div class="container text-center">
+      <div><br>
+        <h1 class="display-3 text-center"><b><strong>CEMPASÚCHIL</strong></b></h1>
+        <p class="lead text-center"><br><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam maximus arcu sodales tincidunt iaculis. Sed faucibus eget eros non hendrerit. Fusce diam nibh, vehicula sed tellus a, dictum luctus augue. Quisque iaculis vitae dui eu tincidunt. Integer ultrices ipsum velit, et finibus neque vehicula non. Mauris fringilla augue at velit vulputate lobortis. Curabitur eleifend pretium condimentum. Etiam ex diam, tempor sit amet hendrerit a, auctor in mi. Vestibulum quis nisi et eros convallis fermentum. Donec vehicula metus libero, quis porta ex commodo eu. Cras hendrerit ante id lobortis lacinia.</b><br></p>
+      </div>
+        
+      <div class="container text-center">
+        <div class="text-center">
+            <p><a href="/manual" role="button">manual SCC</a></p>
+          <h5>Por favor elige los parámetros de tu búsqueda</h5>
+          <p>Se recomienda leer el manual antes de comenzar</p>
+        </div>
+      </div>
+    </div> 
+      <div class="container text-center">
+          <p><a href="/res" role="button">resultados</a></p>
+      <div>
+        <div id="inic"> 
+            <button class="btn btn-light" onclick="variabl()" id="com">Comenzar</button>
+          </div>
+          <p></p>
+                <div id="todo" style="display: none">
+                    <form action="/n">
+                    <div id="variabls1">
+                    <div class="form-group">
+                        <div style="display: inline">
+                            Edad
+                            <select id="edad" onchange="di('edad',1)" name="age">
+                            </select>
+                        </div>
+                        <div style="display: inline">
+                            Género
+                            <select id="genero" onchange="di('genero',2)" name="gender">
+                            </select>
+                        </div>
+                        <div style="display: inline">
+                            O. Sexual
+                            <select id="oSexual"  onchange="di('oSexual',3)" name="osexual">
+                            </select>
+                        </div>
+                        <div style="display: inline">
+                            Lugar Nac
+                            <select id="lugarNac"  onchange="di('lugarNac',4)" name="bPlace">
+                            </select>
+                        </div>
+                        </div>
+                        <p></p>
+                        <div class="form-group" style="display: inline">
+                            Lugar Res
+                            <input type="text" id="codigo_postal" placeholder="ej. 14030" name="lPlace">
+                        </div>
+                            <!-- <div style="display: inline">
+                                Delegación
+                            <select id="delegacion" onchange="di('delegacion',5)" name="lPlace">
+                            </select>
+                        </div> -->
+                        <div style="display: inline">
+                            Nivel de educación
+                            <select id="nivEdu" onchange="di('nivEdu',6)" name="edu">
+                            </select>
+                            <p></p>
+                            <div id="carreras">Carrera
+                                <select id="carrera"  onchange="di('carrera',7)" name="major">
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <p></p>
+                        <div style="display: inline">
+                            Ocupación
+                            <select id="ocup" onchange="di('ocup',8)" name="ocup">
+                            </select>
+                            
+                            <div id="job" style="display:none" onchange="di('prof',9)">Profesión u oficio
+                            <input id="prof" type="text" placeholder="escribe" name="prof_of">
+                            </div>
+                        </div>
+                        <div style="display: inline">
+                            Otras lenguas
+                            <select id="otrLenguas" onchange="di('otrLenguas',9)" name="lang">
+                            </select>
+                        </div>
+                        <p></p>
+                        <div style="display: block">
+                            Relación con el otro usuario
+                            <select id="relacion" onchange="di('relacion',10)" name="rel">
+                            </select>
+                        </div>
+                    </div>
+          <p></p>
+                    <input type="submit">
+          <p></p>
+                        
+             <p><a href="/" role="button">Nueva consulta</a></p>
+                
+                </form>
+              <div style="display: none">RESULTADOS
+          <textarea id="resul"  rows="20" cols="70" disabled>
+            
+          </textarea>
+          <p></p>
+          <p><a class="btn btn-light" href="/asdfg" role="button">Generar archivo de texto</a></p>
+                  </div>
+                
+          </div>
+          </div>
+          </div>
+      
+      <script src="op.js"></script>
+      
+        <!-- external scripts -->
+        <script src="https://api-codigos-postales.herokuapp.com/v2/codigo_postal/"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTg3IEO1lXkxkhs3a4ouS-rVTYB557hMo&callback=initMap" async defer></script>
+        
+        <!-- application scripts -->
+        <script src="app.js"></script>
+        <script src="app-services/user.service.js"></script>
+        <script src="app-services/flash.service.js"></script>
+        <script src="home/index.controller.js"></script>
+        <script src="upload/index.controller.js"></script>
+
+    </body>
+    <footer class="footer text-center">
+      <div class="container">
+        <span class="text-muted"><p>&copy; GIL UNAM IINGEN 2017</p></span>
+      </div>
+    </footer>
+</html>

@@ -1,0 +1,47 @@
+extends layout
+block content
+    h1= title
+    br
+    br
+    a(href="/") Regresar
+    br
+    br
+    div.newemployee
+        h5= "Se encontraron " + nums + " resultados de los cuales " + num_m + " son mujeres y " + num_h + " hombres"
+    br
+    br
+    
+    div.datamuestra
+            h.h8= "USUARIO 1 : " + result1[0].user1.age + " , " + result1[0].user1.gender + " , " + result1[0].user1.osexual + " , " + result1[0].user1.ocupation + " , " + result1[0].user1.education + " , " + result1[0].user1.prof_of + " , " + result1[0].user1.relation
+            br
+            h.h8= "USUARIO 2 : " + result2[0].user1.age + " , " + result2[0].user1.gender + " , " + result2[0].user1.osexual + " , " + result2[0].user1.ocupation + " , " + result2[0].user1.education + " , " + result2[0].user1.prof_of + " , " + result2[0].user1.relation
+        p
+    
+    div.resultmuestra
+            h.butt Muestra de conversación
+            br
+            each line in text
+                h.h8= line
+                br
+            br
+    br
+    div.newemployee Para obtener acceso completo al corpus envía tu solicitud a blablabla@yihaaaaaaa.com.mx
+    br
+    br
+    each emp in result1
+        div.result 
+            h.butt Conversación 1
+        div.data
+            h.h8= "USUARIO 1 : " + emp.user1.age + " , " + emp.user1.gender + " , " + emp.user1.osexual + " , " + emp.user1.ocupation + " , " + emp.user1.education + " , " + emp.user1.prof_of + " , " + emp.user1.relation
+            br
+            h.h8= "USUARIO 2 : " + emp.user2.age + " , " + emp.user2.gender + " , " + emp.user2.osexual + " , " + emp.user2.ocupation + " , " + emp.user2.education + " , " + emp.user2.prof_of + " , " + emp.user2.relation
+        p
+          
+    each emp in result2
+        div.result
+            h.butt Conversación 2
+        div.data
+            h.h8= "USUARIO 1 : " + emp.user1.age + " , " + emp.user1.gender + " , " + emp.user1.osexual + " , " + emp.user1.ocupation + " , " + emp.user1.education + " , " + emp.user1.prof_of + " , " + emp.user1.relation
+            br
+            h.h8= "USUARIO 2 : " + emp.user2.age + " , " + emp.user2.gender + " , " + emp.user2.osexual + " , " + emp.user2.ocupation + " , " + emp.user2.education + " , " + emp.user2.prof_of + " , " + emp.user2.relation
+        p
