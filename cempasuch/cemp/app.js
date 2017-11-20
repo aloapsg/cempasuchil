@@ -70,6 +70,7 @@ app.get('/n*',function(req, res){
     var texts = [];
     var num_m = 0;
     var num_h = 0;
+    var text_muestra = {};
         user_[0] = req.param('age');
         user_[1] = req.param('gender');
         user_[2] = req.param('osexual');
@@ -88,7 +89,7 @@ app.get('/n*',function(req, res){
             str = str.substr(0,400);
             var posC = str.indexOf("USER",0);
             var col = str.slice(posC - 15);
-            str= str.replace(/(([0-9]|[0-9][0-9])[/])/g,"*-^] ");
+            str= str.replace(/(([0-9]|[0-9][0-9])[/|-])/g,"*-^] ");
             texts = str.split("*-^]");
             emps1 = emps;
             for(i=0;i< emps1.length;i++){
@@ -111,12 +112,24 @@ app.get('/n*',function(req, res){
                     }
                 }
             }
+                for(i=0;i<texts.length;i++){
+                    if(texts[i].indexOf("USER1") != -1){
+                       text_muestra[texts[i]] = "1";
+                    }else{
+                       if(texts[i].indexOf("USER2") != -1){
+                            text_muestra[texts[i]] = "2";
+                        }else{
+                            text_muestra[texts[i]] = "0";
+                        }
+                    }
+                }
                 //res.json(str + str2);
                 res.render('resultados', {
                     title: 'Resultados',
                     result1: emps1,
                     result2: emps2,
                     nums: emps1.length + emps2.length,
+                    text_d: text_muestra,
                     text: texts,
                     num_m: num_m,
                     num_h: num_h

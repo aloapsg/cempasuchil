@@ -20,9 +20,19 @@ block content
     div.resultmuestra
             h.butt Muestra de conversación
             br
-            each line in text
-                h.h8= line
-                br
+            br
+            each line, i in text
+                if text_d[line] == "1"
+                    div.whverde
+                        h.h8= line
+                else
+                    if text_d[line] == "2"
+                        div.whchamp
+                            h.h8= line
+                    else
+                        div.blanc
+                            h.h8= line
+            
             br
     br
     div.newemployee Para obtener acceso completo al corpus envía tu solicitud a blablabla@yihaaaaaaa.com.mx

@@ -6,12 +6,25 @@ body
 block content
     div.inf
         a(href="http://grupos.iingen.unam.mx/iling/es-mx/Paginas/default.aspx") GIL
-    div.inf
-        a(href="http://grupos.iingen.unam.mx/iling/es-mx/Paginas/default.aspx") Artículos
+    div.dropdown
+        button.dropbtn
+            a(href="#") Acerca del corpus
+        div.dropdown-content
+            a(href="#") participantes
+            a(href="#") agradecimientos
+            a(href="#") publicaciones
     div.inf
         a(href="http://grupos.iingen.unam.mx/iling/es-mx/Paginas/default.aspx") Integrantes
     div.inf
-        a(href="http://grupos.iingen.unam.mx/iling/es-mx/Paginas/default.aspx") Contacto
+        a(href="http://grupos.iingen.unam.mx/iling/es-mx/Paginas/default.aspx") Ligas de interés
+    
+    div.dropdown
+        button.dropbtn Otros
+        div.dropdown-content
+            a(href="#") Link
+            a(href="#") Link
+            a(href="#") Link
+    br
     br
     br
     br
@@ -48,6 +61,8 @@ block content
     p: a(href="/")!= "Manual para usar la página de consulta"
     br
     h3 Elige los parámetros de la búsqueda
+    br
+    p: a(href="/")!= "Limpiar"
     br
     form(method="get", action="/n")
         div(style="display: block")
@@ -105,10 +120,6 @@ block content
 
             div(style="display: inline") L. Residencia        
                     input(type="text", name="lPlace", id="k", placeholder="código postal ej. 01430")
-        br
-        br
-        p: a(href="/")!= "Limpiar"
-        br
         br
         br
         br
