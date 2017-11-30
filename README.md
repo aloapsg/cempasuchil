@@ -13,7 +13,7 @@ $ mongod
 * En otra ventana, para crear la base de datos y guardar los documentos
 
 ```sh
-$ python3 prr.py
+$ python3 progx.py
 ```
 
 * Parámetros que requieren editarse para la DB
