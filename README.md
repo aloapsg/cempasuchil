@@ -18,7 +18,7 @@ $ python3 prr.py
 
 * Parámetros que requieren editarse para la DB
 
-| parámetro | prr.py |
+| parámetro | progx.py |
 | ------ | ------ |
 | host y puerto de la bd | 9 mongoClient = MongoClient('HOST',PUERTO) |
 | nombre de la base de datos | 10 db = mongoClient.NOMBRE_DB |
