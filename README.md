@@ -41,3 +41,9 @@ $ npm install
 | coleccion bd  | ConvProvider.js |   16  |
 
 ****
+
+* Inic
+```sh
+$ node app 
+```
+
