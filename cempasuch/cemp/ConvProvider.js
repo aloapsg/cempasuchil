@@ -7,7 +7,7 @@ var ObjectID = require('mongodb').ObjectID;
 var a,b,c,d,e,f,g,h,i,j,k = "";
 
 ConvProvider = function(host, port) {
-  this.db= new Db('PRUEBA_1', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
+  this.db= new Db('PRUEBA_2', new Server(host, port, {safe: false}, {auto_reconnect: true}, {}));
   this.db.open(function(){});
 };
 
@@ -36,31 +36,31 @@ ConvProvider.prototype.findAll = function(info, callback) {
                             query["user1.gender"]= info[i];
                             break;
                         case 2:
-                            query["user1.osexual"]= info[i];
+                            query["user1.oSexual"]= info[i];
                             break;
                         case 3:
-                            query["user1.birthPlace"]= info[i];
+                            query["user1.bPlace"]= info[i];
                             break;
                         case 4:
-                            query["user1.livePlace"]= info[i];
+                            query["user1.lPlace"]= info[i];
                             break;
                         case 5:
-                            query["user1.languages"]= info[i];
+                            query["user1.lang"]= info[i];
                             break;
                         case  6:
-                            query["user1.education"]= info[i];
+                            query["user1.edu"]= info[i];
                            break;
                            case 7:
                             query["user1.major"]= info[i];
                             break;
                         case 8:
-                            query["user1.ocupation"]= info[i];
+                            query["user1.ocup"]= info[i];
                             break;
                         case 9:
-                            query["user1.relation"]= info[i];
+                            query["relation"]= info[i];
                             break;
                          case 10:
-                            query["user1.faculty"]= info[i];
+                            query["user1.fac"]= info[i];
                             break;
                     }
               }
@@ -93,31 +93,31 @@ ConvProvider.prototype.findAll2 = function(info, callback) {
                             query["user2.gender"]= info[i];
                             break;
                         case 2:
-                            query["user2.osexual"]= info[i];
+                            query["user2.oSexual"]= info[i];
                             break;
                         case 3:
-                            query["user2.birthPlace"]= info[i];
+                            query["user2.bPlace"]= info[i];
                             break;
                         case 4:
-                            query["user2.livePlace"]= info[i];
+                            query["user2.lPlace"]= info[i];
                             break;
                         case 5:
-                            query["user2.languages"]= info[i];
+                            query["user2.lang"]= info[i];
                             break;
                         case  6:
-                            query["user2.education"]= info[i];
+                            query["user2.edu"]= info[i];
                            break;
                            case 7:
                             query["user2.major"]= info[i];
                             break;
                         case 8:
-                            query["user2.ocupation"]= info[i];
+                            query["user2.ocup"]= info[i];
                             break;
                         case 9:
-                            query["user2.relation"]= info[i];
+                            query["relation"]= info[i];
                             break;
                         case 10:
-                            query["user2.faculty"]= info[i];
+                            query["user2.fac"]= info[i];
                             break;
                     }
               }

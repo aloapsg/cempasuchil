@@ -74,7 +74,7 @@ app.get('/n*',function(req, res){
         user_[0] = req.param('age');
         user_[1] = req.param('gender');
         user_[2] = req.param('osexual');
-        user_[3] = req.param('bPlace');
+        user_[3]  = req.param('bPlace');
         user_[4] = req.param('lPlace');
         user_[5] = req.param('lang');
         user_[6] = req.param('edu');
@@ -85,12 +85,10 @@ app.get('/n*',function(req, res){
         //user_[10] = req.param('rel');
 
     convProvider.findAll(user_, function(error, emps){
-            str = str + emps[0].conversacion
-            str = str.substr(0,400);
-            var posC = str.indexOf("USER",0);
-            var col = str.slice(posC - 15);
-            str= str.replace(/(([0-9]|[0-9][0-9])[/|-])/g,"*-^] ");
-            texts = str.split("*-^]");
+        str = str + emps[0].conv
+        str = str.substr(0,400);
+        str= str.replace(/(([0-9]|[0-9][0-9])[/|-])/g,"*-^] ");
+        texts = str.split("*-^]");
             emps1 = emps;
             for(i=0;i< emps1.length;i++){
                 if(emps1[i].user1.gender == "M"){
@@ -113,10 +111,10 @@ app.get('/n*',function(req, res){
                 }
             }
                 for(i=0;i<texts.length;i++){
-                    if(texts[i].indexOf("USER1") != -1){
+                    if(texts[i].indexOf(emps1[0].user1.user) != -1){
                        text_muestra[texts[i]] = "1";
                     }else{
-                       if(texts[i].indexOf("USER2") != -1){
+                       if(texts[i].indexOf(emps1[0].user2.user) != -1){
                             text_muestra[texts[i]] = "2";
                         }else{
                             text_muestra[texts[i]] = "0";
@@ -140,7 +138,7 @@ app.get('/n*',function(req, res){
 });
 
 app.get('/vista', function(req,res){ 
-                res.render('employee_edit', {
+                res.render('particip', {
                     title: 'Muestra de corpus de mensajería instantánea',
                     result: 2
                 }); 

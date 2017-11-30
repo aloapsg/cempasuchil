@@ -193,6 +193,9 @@ input[type =submit] {
 }
 .dropdown {
   display: inline-block;
+  margin-left: 1%;
+  margin-right: auto;
+  font-size: 14px;
 }
 .dropdown-content {
   display: none;
