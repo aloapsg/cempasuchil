@@ -1,0 +1,92 @@
+extends layout
+
+script(type='text/javascript', src="/op.js")
+block content
+    h1= title
+    #employees
+        //- each employee in employees
+          div.employee
+            div.created_at= employee.created_at
+            div.title= employee.title 
+            div.name= employee.name
+                form( method="post", action="/employee/:id/delete") 
+                    input(name="_id", type="hidden", value=employee._id.toHexString()) 
+                    input(id="delete", value="X", type="submit")
+                form( method="get", action="/employee/:id/edit") 
+                    input(name="_id", type="hidden", value=employee._id.toHexString()) 
+                    input(id="edit", value="Edit", type="submit")
+            a(href="/employee/new")!= "Add New Employee"
+        
+    
+    div: p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam maximus arcu sodales tincidunt iaculis. Sed faucibus eget eros non hendrerit. Fusce diam nibh, vehicula sed tellus a, dictum luctus augue. Quisque iaculis vitae dui eu tincidunt. Integer ultrices ipsum velit, et finibus neque vehicula non. Mauris fringilla augue at velit vulputate lobortis. Curabitur eleifend pretium condimentum. Etiam ex diam, tempor sit amet hendrerit a, auctor in mi. Vestibulum quis nisi et eros convallis fermentum. Donec vehicula metus libero, quis porta ex commodo eu. Cras hendrerit ante id lobortis lacinia.
+
+    |Ut ultrices tellus dolor, eget sodales magna commodo nec. Nunc et consequat nibh. Integer laoreet posuere interdum. Duis laoreet urna nec nulla convallis dapibus. Pellentesque a dui suscipit, auctor nisi et, dictum mi. Ut at lectus ac metus luctus egestas. Sed ultricies dictum arcu, a congue diam interdum commodo. Nullam elementum mauris nec lorem molestie pellentesque. Vestibulum in sagittis lorem.
+
+    |In risus augue, sagittis eget tincidunt at, facilisis eget eros. Suspendisse id fringilla tortor, sit amet facilisis orci. Aliquam tempus ornare odio eget imperdiet. Phasellus sit amet dolor a erat ullamcorper cursus. Morbi dignissim mattis purus vitae maximus. Integer at rutrum arcu, consequat faucibus odio. Mauris vitae tincidunt orci. Aliquam erat eros, congue in orci ac, imperdiet pulvinar ex. Nunc ut venenatis nunc, id fringilla erat. Sed sed ipsum sed sapien congue interdum nec sed purus. Nunc diam quam, ullamcorper sit amet metus nec, cursus pharetra massa. Donec auctor lacus sit amet sem blandit, quis varius elit venenatis. Sed viverra scelerisque interdum. Donec et vehicula lorem. Etiam lacinia nibh sem, sit amet ullamcorper massa vulputate volutpat.
+        
+    p: a(href="/")!= "Manual para usar la página de consulta"
+    
+    h3 Elige los parámetros de la búsqueda
+    
+    div(style="display: block")
+        p
+            div(style="display: inline") Edad
+                select.selectpicker(onchange="di('a',1)", id='a')
+                    each item in ['selecciona', 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90]
+                        option= item
+            div(style="display: inline")   Género 
+                select(name='gender', id='b')
+                    each item in ['selecciona', "Masculino", "Femenino"]
+                        option= item
+            div(style="display: inline")   O. Sexual 
+                select(name='oSexual', id='c')
+                    each item in ['selecciona', "Heterosexual", "Homosexual", "Bisexual"]
+                        option= item
+            div(style="display: inline")   L. Nacimiento 
+                select(name='bPlace', id='d')
+                    each item in ['selecciona', 'Aguascalientes', 'Baja California', 'Baja California Sur', 'Campeche', 'CDMX', 'Chiapas', 'Chihuahua', 'Coahuila', 'Colima', 'Durango', 'Guanajuato', 'Guerrero', 'Hidalgo', 'Jalisco', 'Estado de México', 'Michoacán', 'Morelos', 'Nayarit', 'Nuevo León', 'Oaxaca', 'Puebla', 'Querétaro', 'Quintana Roo', 'San Luis Potosí', 'Sinaloa', 'Sonora', 'Tabasco', 'Tamaulipas', 'Tlaxcala', 'Veracruz', 'Yucatán', 'Zacatecas']
+                        option= item
+            div(style="display: inline")   Nivel educativo    
+                select(name='lEdu', id='e')
+                    each item in ['selecciona', "Sin educación formal", "Primaria", "Secundaria", "Preparatoria", "Licenciatura", "Maestría", "Doctorado"]
+                        option= item
+    div(style="display: block")
+        p
+            div(style="display: inline")   Ocupación 
+                select(name='ocup', id='f')
+                    each item in ['selecciona', "Estudiante", "Estudiante y empleado", "Empleado", "Jubilado o desempleado"]
+                        option= item
+            div(style="display: inline")   Otras lenguas 
+                select(name='languages', id='g')
+                    each item in ['selecciona', "Alemán", "Árabe", "Catalán", "Chino", "Coreano", "Francés", "Griego Moderno", "Hebreo", "Inglés", "Italiano", "Japonés", "Náhuatl", "Portugués", "Rumano", "Ruso", "Sueco", "Vasco", "Amuzgo", "Chatino", "Chichimeco", "Chinanteco", "Ch\´ol", "Chontal de Tabasco", "Cuicateco", "Huasteco", "Huave del oeste", "Huichol", "Lacandón", "Mam del Soconusco", "Matlatzinca", "Maya", "Mayo", "Mazahua", "Mazateco", "Mixe", "Mixteco del oeste de la costa", "Náhuatl de la huasteca potosina", "Otomí", "Pame del norte", "Popoloca", "Popoluca de la Sierra", "Purépecha", "Seri", "Tarahumara", "Tepehua del norte", "Tlahuica", "Tlapaneco", "Tojolabal", "Totonaco de la costa", "Triqui de la alta", "Tseltal", "Tsotsil", "Yaqui", "Zapoteco de la planicie costera", "Zoque del norte alto", "Akateko", "Awakateko", "Ayapaneco", "Chocholteco", "Chontal de Oaxaca", "Chuj", "Cora", "Cucapá", "Guarijío", "Ixcateco", "Ixil", "Jakalteko", "Kaqchikel", "K\'iche\'", "Kickapoo", "Kiliwa", "Ku\'ahl", "Kumiai", "Oluteco", "Paipai", "Pápago", "Q\'anjobal", "Qato\'k", "Q\'eqchi\'", "Sayulteco", "Teko", "Tepehuano del sur", "Texistepequeño"]
+                        option= item
+            div(style="display: inline")   Relación  
+                select(name='rel', id='h')
+                    each item in ["selecciona","Amiga/o-amiga/o", "Novia/o-novia/o", "Madre-hija/o", "Hija/o-madre", "Padre-hija/o", "Hija/o-padre", "Hermana/o-hermana/o", "Prima/o-prima/o", "Tía/o-sobrina/o", "Sobrina/o-tía/o", "Cuñada/o-cuñada/o", "Superior-subordinada/o", "Subordinada/o-superior", "Profesor/a-alumna/o", "Alumna/o-profesor/a", "Compañera/o de trabajo-compañera/o de trabajo", "Compañera/o de escuela-compañera/o de escuela", "Cliente-prestador/a de servicios", "Prestador/a de servicios-cliente"]
+                        option= item
+    div(style="display: block")
+        p
+            div(style="display: inline")   Carrera 
+                select(name='major', id='i')
+                    each item in ["selecciona", 'Arquitectura', 'Arquitectura de Paisaje', 'Diseño Industrial', 'Urbanismo', 'Actuaría', 'Biología', 'Ciencias de la Computación', 'Ciencias de la Tierra', 'Física', 'Física Biomédica', 'Matemáticas', 'Matemáticas Aplicadas', 'Antropología', 'Ciencias de la Comunicación', 'Ciencias Políticas y Administración Pública', 'Relaciones Internacionales', 'Sociología', 'Contaduría', 'Administración', 'Informática', 'Derecho', 'Economía', 'Bibliotecología y Estudios de la Información', 'Desarrollo y Gestión Interculturales', 'Estudios Latinoamericanos', 'Filosofía', 'Geografía', 'Historia', 'Lengua y Literaturas Hispánicas', 'Lengua y Literaturas Modernas (Letras Alemanas)', 'Lengua y Literaturas Modernas (Letras Francesas)', 'Lengua y Literaturas Modernas (Letras Inglesas)', 'Lengua y Literaturas Modernas (Letras Italianas)', 'Lengua y Literaturas Modernas (Letras Portuguesas)', 'Letras Clásicas', 'Literatura Dramática y Teatro', 'Pedagogía', 'Ingeniería Civil', 'Ingeniería de Minas y Metalurgia', 'Ingeniería Eléctrica y Electrónica', 'Ingeniería en Computación', 'Ingeniería en Sistemas Biomédicosb', 'Ingeniería en Telecomunicacionesb', 'Ingeniería Geofísica', 'Ingeniería Geológica', 'Ingeniería Geomática', 'Ingeniería Industrial', 'Ingeniería Mecánica', 'Ingeniería Mecatrónica', 'Ingeniería Petrolera', 'Ciencia Forense', 'Fisioterapia', 'Investigación Biomédica Básica', 'Médico Cirujano', 'Neurociencias', 'Médico Veterinario Zootecnista', 'Cirujano Dentista', 'Psicología', 'Ingeniería Química', 'Ingeniería Química Metalúrgica', 'Química', 'Química de Alimentos', 'Química Farmacéutico Biológica', 'Trabajo Social']
+                        option= item
+            div(style="display: inline")   Delegación 
+                select(name='del', id='j')
+                    each item in ["selecciona", 'Álvaro Obregón', 'Azcapotzalco', 'Benito Juárez', 'Coyoacán', 'Cuajimalpa', 'Cuauhtémoc', 'Gustavo A. Madero', 'Iztacalco', 'Iztapalapa', 'Magdalena Contreras', 'Miguel Hidalgo', 'Milpa Alta', 'Tláhuac', 'Tlalpan', 'Venustiano Carranza', 'Xochimilco']
+                        option= item
+        
+        div(style="display: inline")
+                span.label L. Residencia
+                input(type="text", name="lRes", id="k", placeholder="código postal ej. 01430")
+
+    p: a(href="/busqueda")!= "Consulta"
+    p: a(href="/")!= "Nueva consulta"
+    
+    //-div(style="display: block")
+        p RESULTADOS
+            div(style="display: block")
+                    textarea(rows=50, cols=100, disabled=true, id=)="j"
+                
+    block footer
+        footer
+            p GIL UNAM IINGEN 2017
