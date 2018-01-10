@@ -4,7 +4,7 @@
 ****
 
 * Para la base de datos, una vez descargado y descomprimido el archivo de conversaciones:
- [archivo conversaciones](https://drive.google.com/file/d/1laFzcHpnEpKJkZH6uMQMF4niaaUikzGC/view?usp=sharing)
+ [archivo conversaciones](https://)
 
 ```sh
 $ mongod
